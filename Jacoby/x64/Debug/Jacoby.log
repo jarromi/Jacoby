@@ -1,0 +1,4 @@
+﻿  main.cpp
+E:\c++_projects\PhysEng\jacoby_0.02\Jacoby\Jacoby\main.cpp(103,19): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+E:\c++_projects\PhysEng\jacoby_0.02\Jacoby\Jacoby\main.cpp(111,17): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+  Jacoby.vcxproj -> E:\c++_projects\PhysEng\jacoby_0.02\Jacoby\x64\Debug\Jacoby.exe

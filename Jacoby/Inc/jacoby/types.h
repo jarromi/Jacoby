@@ -19,6 +19,6 @@ typedef bool BOOL;
 
 typedef std::string STRING;
 
-
+#define MAX_FLOAT FLT_MAX
 
 #endif

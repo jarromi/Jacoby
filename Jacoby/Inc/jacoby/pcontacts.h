@@ -28,5 +28,24 @@ namespace jacoby
 		FLOAT m_penetration;
 
 		void ResolveInterpenetration(FLOAT dT);
+
+		friend class ParticleContactResolver;
+	};
+
+	class ParticleContactResolver
+	{
+	protected:
+		unsigned m_iter;
+
+		unsigned m_iterUsed;
+
+	public:
+		ParticleContactResolver(unsigned iter);
+
+		void SetIterations(unsigned iter);
+
+		void ResolveContacts(ParticleContact* contactArray,
+			unsigned numContacts,
+			FLOAT dT);
 	};
 }

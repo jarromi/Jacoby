@@ -96,4 +96,34 @@ namespace jacoby
 			);
 		}
 	}
+
+	void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray,
+		unsigned numContacts,
+		FLOAT dT)
+	{
+		unsigned i;
+
+		m_iterUsed = 0;
+		while (m_iterUsed < m_iter)
+		{
+			FLOAT max = MAX_FLOAT;
+			unsigned maxInd = numContacts;
+			for (i = 0; i < numContacts; ++i)
+			{
+				FLOAT sepVal = contactArray[i].CalculateSeparatingVelocity();
+				if (sepVal < max && (sepVal < 0 || contactArray[i].m_penetration > 0))
+				{
+					max = sepVal;
+					maxInd = 1;
+				}
+			}
+
+			if (maxInd == numContacts)
+				break;
+
+			contactArray[maxInd].Resolve(dT);
+
+			++m_iterUsed;
+		}
+	}
 }
